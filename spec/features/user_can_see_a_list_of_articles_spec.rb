@@ -4,8 +4,9 @@ feature 'List articles on index page' do
   context 'with articles in db' do
     before do
 
-      create(:article, title: 'A breaking news item')
-      create(:article, title: 'Learn Rails 5')
+      create(:article, title: 'A breaking news item', content: 'Some breaking action')
+      create(:article, title: 'Learn Rails 5', content: 'Build awesome rails applications')
+
       visit root_path
     end
 
@@ -13,8 +14,8 @@ feature 'List articles on index page' do
       expect(page).to have_content 'A breaking news item'
     end
 
-    it 'displays second article title' do
-      expect(page).to have_content 'Some really breaking action'
+    it 'displays the second article'do
+      expect(page).to have_content 'Learn Rails 5'
     end
   end
 end
