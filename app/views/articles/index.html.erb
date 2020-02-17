@@ -1,8 +1,12 @@
-<%# app/views/articles/index.html.erb %>
+<%= link_to 'New Article', new_article_path %> </button>
+
 <ul>
   <% @articles.each do |article| %>
     <li>
-       <%= link_to article.title, article_path(article) %><br />
+          
+          <%= link_to article.title, article_path(article) %>
     </li>
   <% end %>
 </ul>
+
+  
